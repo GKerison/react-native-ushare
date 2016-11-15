@@ -127,7 +127,17 @@ public class UShareModule extends ReactContextBaseJavaModule {
                         @Override
                         public void onComplete(SHARE_MEDIA share_media, int i, Map<String, String> map) {
                             if (callback != null) {
-                                callback.invoke(SHARE_SUCCESS,map);
+                                WritableMap result = Arguments.createMap();
+                                if (SHARE_MEDIA.WEIXIN == share_media) {
+                                    result.putString("uid",map.get("unionid"));
+                                    result.putString("openid",map.get("openid"));
+                                }else{
+                                    result.putString("uid",map.get("uid"));
+                                }
+                                result.putString("name",map.get("screen_name"));
+                                result.putString("gender",map.get("gender"));
+                                result.putString("icon",map.get("profile_image_url"));
+                                callback.invoke(SHARE_SUCCESS,result);
                             }
                         }
 

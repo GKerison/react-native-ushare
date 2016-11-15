@@ -4,9 +4,9 @@
       <root url="jar://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.facebook.react/react-native/0.33.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.facebook.react/react-native/0.33.0/jars/libs/infer-annotations-1.5.jar!/" />
-      <root url="file://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.facebook.react/react-native/0.33.0/res" />
       <root url="jar://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.facebook.react/react-native/0.33.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.facebook.react/react-native/0.33.0/res" />
+      <root url="jar://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.facebook.react/react-native/0.33.0/jars/libs/infer-annotations-1.5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
