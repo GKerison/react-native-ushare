@@ -11,7 +11,7 @@
 
 @interface UShareHelper : NSObject
 
-+(void)openLog:(BOOL)isOpen;
++(void)configLog:(BOOL)isOpen;
 
 +(void)configUShare:(NSString *)appKey;
 
@@ -23,6 +23,7 @@
 
 +(BOOL)handleOpenURL:(NSURL *)url;
 
-+(void)share:(NSString *)shareType title:(NSString *)title desc:(NSString *)desc image:(NSString*) image url:(NSString *)url callback:(UMSocialRequestCompletionHandler)callback;
++(void)share:(UMSocialPlatformType)platform  title:(NSString *)title desc:(NSString *)desc image:(NSString*) image url:(NSString *)url callback:(UMSocialRequestCompletionHandler)callback;
 
++(void)authAndGetInfo:(UMSocialPlatformType)platform callback:(UMSocialRequestCompletionHandler)callback;
 @end

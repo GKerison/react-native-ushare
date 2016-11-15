@@ -10,7 +10,7 @@
 
 @implementation UShareHelper
 
-+(void)openLog:(BOOL)isOpen{
++(void)configLog:(BOOL)isOpen{
   [[UMSocialManager defaultManager] openLog:isOpen];
 }
 
@@ -20,7 +20,6 @@
 
 +(void)configWeiXin:(NSString *)appKey appSecret:(NSString *)appSecret{
   [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:appKey appSecret:appSecret redirectURL:@"http://mobile.umeng.com/social"];
-  
 }
 
 +(void)configQQ:(NSString *)appId{
@@ -35,7 +34,7 @@
   return [[UMSocialManager defaultManager] handleOpenURL:url];
 }
 
-+(void)share:(NSString *)shareType title:(NSString *)title desc:(NSString *)desc image:(NSString *)image url:(NSString *)url callback:(UMSocialRequestCompletionHandler)callback{
++(void)share:(UMSocialPlatformType)platform title:(NSString *)title desc:(NSString *)desc image:(NSString *)image url:(NSString *)url callback:(UMSocialRequestCompletionHandler)callback{
   
   UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
   if(url){
@@ -47,9 +46,13 @@
     messageObject.shareObject =imageObject;
   }
   //调用分享接口
-  dispatch_async(dispatch_get_main_queue(), ^{
-    [[UMSocialManager defaultManager] shareToPlatform:UMSocialPlatformType_QQ messageObject:messageObject currentViewController:nil completion:callback];
-  });
+  [[UMSocialManager defaultManager] shareToPlatform:platform messageObject:messageObject currentViewController:nil completion:callback];
+  
 }
 
++(void)authAndGetInfo:(UMSocialPlatformType)platform callback:(UMSocialRequestCompletionHandler)callback{
+  [[UMSocialManager defaultManager]cancelAuthWithPlatform:platform completion:^(id result, NSError *error) {
+    [[UMSocialManager defaultManager] getUserInfoWithPlatform:platform currentViewController:nil completion:callback];
+  }];
+}
 @end

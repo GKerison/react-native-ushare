@@ -17,6 +17,63 @@ RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(share:(NSString *)shareType title:(NSString *)title desc:(NSString *)desc image:(NSString*) image url:(NSString *)url callback:(RCTResponseSenderBlock)callback )
 {
+  UMSocialPlatformType platformType = [self parsePlatform:shareType];
+  //不支持的平台直接返回失败
+  if(UMSocialPlatformType_UnKnown == platformType){
+    if(callback){
+      callback(@[@SHARE_FAILED]);
+    }
+    return;
+  }
+  
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [UShareHelper share:platformType title:title desc:desc image:image url:url callback:^(id result, NSError *error) {
+      if(!callback){
+        return;
+      }
+      if (error) {
+        callback(@[@SHARE_FAILED]);
+      }else{
+        callback(@[@SHARE_SUCCESS]);
+      }
+    }];
+  });
+}
+
+RCT_EXPORT_METHOD(authAndGetInfo:(NSString *)shareType callback:(RCTResponseSenderBlock)callback){
+  
+  UMSocialPlatformType platformType = [self parsePlatform:shareType];
+  //不支持的平台直接返回失败
+  if(UMSocialPlatformType_UnKnown == platformType){
+    if(callback){
+      callback(@[@SHARE_FAILED]);
+    }
+    return;
+  }
+  
+  dispatch_async(dispatch_get_main_queue(), ^{
+    
+    [UShareHelper authAndGetInfo:platformType callback:^(id result, NSError *error) {
+      if(!callback){
+        return;
+      }
+      if (error || result == nil) {
+        callback(@[@SHARE_FAILED]);
+      }else{
+        UMSocialUserInfoResponse *resp = result;
+        NSMutableDictionary *data = [NSMutableDictionary new];
+        data[@"name"] = resp.name;
+        data[@"gender"] = resp.gender;
+        data[@"icon"] = resp.iconurl;
+        data[@"uid"] = resp.uid;
+        data[@"openid"] = resp.openid;
+        callback(@[@SHARE_SUCCESS,data]);
+      }
+    }];
+  });
+}
+
+- (UMSocialPlatformType) parsePlatform:(NSString *)shareType{
   UMSocialPlatformType platformType = UMSocialPlatformType_UnKnown;
   if([@"QQ" isEqualToString:shareType]){
     platformType = UMSocialPlatformType_QQ;
@@ -31,26 +88,7 @@ RCT_EXPORT_METHOD(share:(NSString *)shareType title:(NSString *)title desc:(NSSt
   }else{
     platformType = UMSocialPlatformType_UnKnown;
   }
-  
-  //不支持的平台直接返回失败
-  if(UMSocialPlatformType_UnKnown == platformType){
-    if(callback){
-      callback(@[@SHARE_FAILED]);
-    }
-    return;
-  }
-  
-  
-  [UShareHelper share:shareType title:title desc:desc image:image url:url callback:^(id result, NSError *error) {
-    if(!callback){
-      return;
-    }
-    if (error) {
-      callback(@[@SHARE_FAILED]);
-    }else{
-      callback(@[@SHARE_SUCCESS]);
-    }
-  }];
+  return platformType;
 }
 
 - (NSDictionary *)constantsToExport
