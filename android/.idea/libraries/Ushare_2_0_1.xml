@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="Ushare-2.0.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.github.GKerison/Ushare/2.0.1/jars/libs/SocialSDK_Sina.jar!/" />
+      <root url="file://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.github.GKerison/Ushare/2.0.1/res" />
+      <root url="jar://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.github.GKerison/Ushare/2.0.1/jars/libs/SocialSDK_QQZone_3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.github.GKerison/Ushare/2.0.1/jars/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.github.GKerison/Ushare/2.0.1/jars/libs/libammsdk.jar!/" />
+      <root url="jar://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.github.GKerison/Ushare/2.0.1/jars/libs/umeng_social_net.jar!/" />
+      <root url="jar://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.github.GKerison/Ushare/2.0.1/jars/libs/open_sdk_r5756_lite.jar!/" />
+      <root url="jar://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.github.GKerison/Ushare/2.0.1/jars/libs/mta-sdk-1.6.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.github.GKerison/Ushare/2.0.1/jars/libs/umeng_social_api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.github.GKerison/Ushare/2.0.1/jars/libs/weiboSDKCore_3.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/react-native-ushare/build/intermediates/exploded-aar/com.github.GKerison/Ushare/2.0.1/jars/libs/SocialSDK_WeiXin_2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/react-native-ushare.iml" filepath="$PROJECT_DIR$/react-native-ushare.iml" />
+      <module fileurl="file://$PROJECT_DIR$/react-native-ushare/react-native-ushare-react-native-ushare.iml" filepath="$PROJECT_DIR$/react-native-ushare/react-native-ushare-react-native-ushare.iml" />
+    </modules>
+  </component>
+</project>

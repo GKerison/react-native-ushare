@@ -35,3 +35,14 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# android
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
