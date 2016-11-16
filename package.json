@@ -1,6 +1,6 @@
 {
   "name": "react-native-ushare-kerison",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a share library for react-native",
   "main": "index.js",
   "scripts": {
