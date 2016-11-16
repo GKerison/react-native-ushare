@@ -1,6 +1,6 @@
 {
-  "name": "react-native-ushare",
-  "version": "1.0.0",
+  "name": "react-native-ushare-kerison",
+  "version": "1.0.1",
   "description": "a share library for react-native",
   "main": "index.js",
   "scripts": {
@@ -11,10 +11,10 @@
     "url": "git+https://github.com/GKerison/react-native-ushare.git"
   },
   "keywords": [
-    "share",
-    "react-native"
+    "react-native",
+    "share"
   ],
-  "author": "GKerison",
+  "author": "kerison",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GKerison/react-native-ushare/issues"
