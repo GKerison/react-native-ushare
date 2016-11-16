@@ -16,17 +16,18 @@
   - 新浪
 
 ## 使用
-- 安装
+1. 安装
 ```
 npm i react-native-ushare-kerison
 ```
   - Android [配置](https://github.com/GKerison/UShare)
   - iOS [配置](./ios)
-- 引入
+
+2. 引入
 ```
 import UShare from 'react-native-ushare-kerison';
 ```
-- 分享
+3. 分享
 ```
 UShare.share(shareType,title,desc,image,url,(result)=>{
   if(result === UShare.SUCCESS){
@@ -38,7 +39,7 @@ UShare.share(shareType,title,desc,image,url,(result)=>{
   }
 });
 ```
-- 授权
+4. 授权
 ```
 UShare.authAndGetInfo(shareType,(result,data)=>{
   if(result === UShare.SUCCESS){
